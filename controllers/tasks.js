@@ -1,7 +1,7 @@
 
 
 
-getAllTasks = async (req, res) => {
+let getAllTasks = async (req, res) => {
     try {
         res.status(200).json({ success: true, msg: 'Show all tasks' })
     } catch (error) {
@@ -11,4 +11,4 @@ getAllTasks = async (req, res) => {
 }
 
 
-export { getAllTasks };
+module.exports =  { getAllTasks };

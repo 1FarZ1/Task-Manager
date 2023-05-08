@@ -1,12 +1,18 @@
 const express = require('express');
+const Tasksrouter = require('./routes/tasks');
 
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-    }
-);
+app.use(express.static('./public'));
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+
+app.use("/api/v1/tasks",Tasksrouter);
+
+
+
 
 
 
