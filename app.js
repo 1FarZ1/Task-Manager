@@ -1,6 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const Tasksrouter = require('./routes/tasks');
 const { default: connectDb } = require('./mongoDb');
+
 
 const app = express();
 const port = 3000;
@@ -22,7 +24,7 @@ app.use("/api/v1/tasks",Tasksrouter);
 
 let main = async ()=>{  
 try {
-    await connectDb();
+    await connectDb(process.env.MONGO_URI);
     app.listen(port, () => {
     console.log('Server is running on http://localhost:' + port);
     }
