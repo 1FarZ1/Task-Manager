@@ -75,4 +75,6 @@ let updateTasks = async (req, res) => {
 }
 
 
+// you can add a put method to update all the fields of a document , but for now i wont use it , patch is for updating some fields of a document , put is for updating all the fields of a document
+
 module.exports =  { getAllTasks, createTask, deleteTask, updateTasks, getTask };
