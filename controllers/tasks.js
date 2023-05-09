@@ -55,7 +55,6 @@ let deleteTask = async (req, res) => {
     } catch (error) {
         res.status(500).json({ success: false, msg: 'Server Error' })
     }
-
 }
 
 let updateTasks = async (req, res) => {
