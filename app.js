@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const Tasksrouter = require('./routes/tasks');
-const { default: connectDb } = require('./mongoDb');
+const { default: connectDb } = require('./db/mongoDb');
 
 
 const app = express();
@@ -13,6 +13,9 @@ app.use(express.urlencoded({extended:true}));
 
 
 app.use("/api/v1/tasks",Tasksrouter);
+
+
+app.use(NotFound);
 
 
 
