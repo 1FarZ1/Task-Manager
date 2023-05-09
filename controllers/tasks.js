@@ -20,7 +20,7 @@ let createTask = async (req, res) => {
             return res.status(400).json({ success: false, msg: 'Task name must be at least 3 characters' })
         }
         const task = await Task.create(req.body);
-        res.status(200).json({ success: true, task })
+        res.status(201).json({ success: true, task })
     } catch (error) {
         res.status(500).json({ success: false, msg: 'Server Error' })
     }
