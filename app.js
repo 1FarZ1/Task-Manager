@@ -8,7 +8,7 @@ const notFound = require('./middlewares/not_found');
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(express.static('./public'));
+app.use(express.static('./views'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
