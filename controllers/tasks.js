@@ -47,7 +47,7 @@ let createTask = async (req, res) => {
 let deleteTask = async (req, res) => {
     try {
         const { id: taskID } = req.params;
-       let task =  await Task.deleteOne({ _id: taskID });
+       let task =  await Task.findOneAndDelete({ _id: taskID });
         if(!task){
             return res.status(404).json({ success: false, msg: `No task with id: ${taskID}` })
         }
