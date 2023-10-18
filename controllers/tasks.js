@@ -4,6 +4,7 @@ const Task = require('../models/task');
 let getAllTasks = async (req, res) => {
     try {
         const tasks = await Task.find({});
+        
         if(!tasks){
             return res.status(404).json({ success: false, msg: 'No tasks found' })
         }
